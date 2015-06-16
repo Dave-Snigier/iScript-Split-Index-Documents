@@ -1,0 +1,34 @@
+reportName: ComAp
+reportDescription: Undergraduate Common Application
+# csvFilePath: /di_interfaces/import_agent/DI_###ENV_U3###_SA_AD_INBOUND/
+# csvArchivePath: /di_interfaces/import_agent/DI_###ENV_U3###_SA_AD_INBOUND/csv_archive/
+errorQueue: Import Split Index Error
+ignoreFinalPage: false
+copyFinalPageToChildren: false
+tempQueue: Import Split Index Working
+finalQueue: Import Split Index Complete
+backupQueue: Import Split Index Archive
+
+staticValues:
+  - name: f5
+    type: IDX
+    transform: getF5DateTime
+  - name: Source
+    type: CP
+    value: CommonApp
+  - name: Document App Plan
+    type: CP
+    value: import-split-index.js iScript
+
+fileNameValues:
+  - name: reportName
+    type: none
+  - name: date stamp
+    type: none
+  - name: drawer
+    type: IDX
+  - name: External App Nbr
+    type: CP
+  - name: documentTypeCode
+    type: none
+    transform: ComAp_lookup_UA_common_app_doctype

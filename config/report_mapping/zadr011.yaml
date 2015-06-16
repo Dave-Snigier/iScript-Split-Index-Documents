@@ -1,0 +1,79 @@
+reportName: zadr011
+reportDescription: Undergraduate Profile Sheet
+csvFilePath: Y:\import_agent\DI_###ENV_U3###_SA_AD_INBOUND\
+csvArchivePath: Y:\import_agent\DI_###ENV_U3###_SA_AD_INBOUND\csv_archive\
+errorQueue: Import Split Index Error
+ignoreFinalPage: false
+copyFinalPageToChildren: false
+tempQueue: Import Split Index Working
+finalQueue: Import Split Index Complete
+backupQueue: Import Split Index Archive
+csvDelimiter: ^
+
+staticValues:
+  - name: Drawer
+    type: IDX
+    transform: determineDrawer
+  - name: doctype
+    type: IDX
+    value: Profile Sheet
+    transform: decorateDoctypes
+  - name: f5
+    type: IDX
+    transform: getF5DateTime
+  - name: Source
+    type: CP
+    value: SA PeopleSoft
+  - name: Document App Plan
+    type: CP
+    value: import-split-index.js iScript
+
+fileNameValues:
+  - name: reportName
+    type: none
+
+csvValues:
+  - name: pages
+    type: pages
+  - name: Institution
+    type: NONE
+  - name: Career
+    type: NONE
+    transform: populateCareer
+  - name: App Center
+    type: CP
+  - name: folder
+    type: IDX
+  - name: tab
+    type: IDX
+  - name: f3
+    type: IDX
+  - name: Term Code
+    type: CP
+  - name: Program
+    type: CP
+  - name: Program Code
+    type: CP
+  - name: Plan
+    type: CP
+  - name: Plan Code
+    type: CP
+  - name: Sub-Plan
+    type: CP
+  - name: Sub-Plan Code
+    type: CP
+  - name: F4
+    type: IDX
+    transform: populateAppNbr
+  - name: External App Nbr
+    type: CP
+  - name: Alias 1
+    type: CP
+  - name: Alias 2
+    type: CP
+  - name: Alias 3
+    type: CP
+  - name: Alias 4
+    type: CP
+  - name: Recommender Name
+    type: NONE

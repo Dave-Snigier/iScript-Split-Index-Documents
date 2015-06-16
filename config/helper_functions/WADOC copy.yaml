@@ -1,0 +1,73 @@
+reportName: WADOC
+reportDescription: Undergraduate/Graduate Web Application Uploads
+csvFilePath: /di_interfaces/DI_DEV_SA_AD_INBOUND/
+errorQueue: UMGA INMAC ERROR
+errorReason: Moving to Error Queue
+ignoreFinalPage: true
+copyFinalPageToChildren: true
+tempQueue: UMGA INMAC Split Index working
+finalQueue: UMGA INMAC Split Index Done
+backupQueue: UMGA INMAC Split Index Archive
+
+staticValues:
+  - name: Drawer
+    type: IDX
+    transform: determineDrawer
+  - name: doctype
+    type: IDX
+    value: 
+  - name: f5
+    type: IDX
+    transform: getF5DateTime
+    
+fileNameValues:
+  - name: reportName
+    type: none
+  - name: Web Rec Number
+    type: none
+  - name: Document Type
+    type: IDX
+    transform: webAppdoctypeDrawerLookup
+csvValues:
+  - name: pages
+    type: NONE
+  - name: Institution
+    type: NONE
+  - name: Career
+    type: NONE
+  - name: App Center
+    type: CP
+  - name: folder
+    type: IDX
+  - name: tab
+    type: IDX
+  - name: Term Code
+    type: CP
+  - name: f3
+    type: IDX
+  - name: Program Code
+    type: CP
+  - name: Program
+    type: CP
+  - name: Plan Code
+    type: CP
+  - name: F4
+    type: IDX
+  - name: Sub-Plan
+    type: CP
+  - name: Sub-Plan Code
+    type: CP
+  - name: SA Application Nbr
+    type: CP
+  - name: External App Nbr
+    type: CP
+  - name: Alias 1
+    type: CP
+  - name: Alias 2
+    type: CP
+  - name: Alias 3
+    type: CP
+  - name: Alias 4
+    type: CP
+  - name: Recommender Name
+    type: NONE

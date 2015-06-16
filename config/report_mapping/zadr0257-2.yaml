@@ -1,0 +1,99 @@
+reportName: zadr0257-2
+reportDescription: Personal Disclosure Question
+csvFilePath: Y:\import_agent\DI_###ENV_U3###_SA_AD_INBOUND\
+csvArchivePath: Y:\import_agent\DI_###ENV_U3###_SA_AD_INBOUND\csv_archive\
+errorQueue: Import Split Index Error
+ignoreFinalPage: false
+copyFinalPageToChildren: false
+tempQueue: Import Split Index Working
+finalQueue: Import Split Index Complete
+backupQueue: Import Split Index Archive
+
+staticValues:
+  - name: drawer
+    type: IDX
+    transform: lookupDrawerDoctypeAD
+  - name: f5
+    type: IDX
+    transform: getF5DateTime
+  - name: convert ugrd to grad
+    type: none
+    transform: ugrdToGrad
+  - name: Source
+    type: CP
+    value: SA PeopleSoft
+  - name: Document App Plan
+    type: CP
+    value: import-split-index.js iScript
+
+fileNameValues:
+  - name: reportName
+    type: none
+
+csvValues:
+  - name: pages
+    type: pages
+  - name: Institution
+    type: none
+  - name: Career
+    type: none
+    transform: populateCareer
+  - name: App Center
+    type: CP
+  - name: folder
+    type: IDX
+  - name: DOB
+    type: none
+  - name: SSN#, Legacy
+    type: none
+  - name: tab
+    type: IDX
+  - name: f3
+    type: IDX
+  - name: Term Code
+    type: CP
+  - name: Program
+    type: CP    
+  - name: Program Code
+    type: CP
+  - name: Plan
+    type: CP   
+  - name: Plan Code
+    type: CP
+  - name: Sub-Plan
+    type: CP
+  - name: Sub-Plan Code
+    type: CP
+  - name: F4
+    type: IDX
+  - name: External App Nbr
+    type: CP
+  - name: Admit Type Code
+    type: none
+  - name: Admit Type
+    type: none
+  - name: Application Method
+    type: none
+  - name: Notification Plan
+    type: none
+  - name: Program Status
+    type: none
+  - name: Alias 1
+    type: CP
+  - name: Alias 2
+    type: CP
+  - name: Alias 3
+    type: CP
+  - name: Alias 4
+    type: CP
+  - name: PD
+    type: CP
+    transform: formatPD
+  - name: International
+    type: CP
+    transform: formatInternational
+  - name: State
+    type: CP
+  - name: Partnership
+    type: CP
+    transform: formatPartnership
